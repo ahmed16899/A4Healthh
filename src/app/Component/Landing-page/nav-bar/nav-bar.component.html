@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="">
+        <img src="../../../assets/landing_page/images/logo-removebg-preview.png" alt="" width="55" height="40">
+        <span
+        class="text-primary">A</span><span class="text-danger">4</span><span
+                class="text-primary">Health</span>
+                </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav nav-pills d-flex justify-content-end text-white w-100  handle-nav handle-m ">
+                <li class="nav-item" role="presentation">
+                    <button  class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home"
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a [routerLink]='["./Home"]'>Home</a></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false"><a [routerLink]="['/Service']">Service</a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false"><a [routerLink]="['/AboutUs']" >About us</a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false"><a [routerLink]="['/Search']" >
+                            Search
+                        </a></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+
+                        aria-selected="false"><a  [routerLink]="['/Community']">Community</a></button>
+
+                </li>
+ 
+                <li *ngIf="confirmCondition" class="nav-item" role="presentation" >
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
+                        <i class="fa-solid fa-user ms-2 me-2"></i> <span [routerLink]="user_type?'/userdashboard/reservations':'/doctordashboard/appointment'">{{user_name}}</span>
+                    </button>
+
+                </li>
+
+
+                <li  *ngIf="!confirmCondition">
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill" routerLink="signin">Sign In</button>
+
+                </li>
+                <li  *ngIf="!confirmCondition">
+                    <button class="btn btn-outline-primary margin-o-small  mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill" routerLink="signup">Sign Up</button>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+      <app-sign-in></app-sign-in>
+      
+      </div>
+    </div>
+  </div> -->

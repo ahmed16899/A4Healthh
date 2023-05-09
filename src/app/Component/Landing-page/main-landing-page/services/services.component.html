@@ -1,0 +1,270 @@
+
+<!-- <div class="services pt-3 pb-3" id="service">
+
+
+    <h2 class="text-center m-0">
+        Our Services
+    </h2>
+    <p class="text-center ms-auto me-auto w-75 pt-2 pb-2 mb-0  ">
+        We offer complete healthcare to individuals with various health concerns.
+
+  
+    </p>
+    <div class="container serv mt-2 mb-2">
+    <owl-carousel-o [options]="customOptions"> 
+        <ng-container *ngFor="let specialty of specialties ;index as i">
+            <ng-template carouselSlide class="item-con">
+                <div class="item ">
+                    <div class="item-card">
+                        <div class="serviceCard">
+                            <div class="cardIcon" *ngIf="specialty.name == specialIcon[i].name">
+                                <i [class]="specialIcon[i].icon"></i>
+                            </div>
+                            <div class="cardIcon" *ngIf="specialty.name != specialIcon[i].name">
+                                <i class="fa-solid fa-hand-holding-medical"></i>
+                            </div>
+                            <div class="cardBody">
+                                <p>
+                                    {{specialty.name}}
+                                </p>
+                            </div>
+        
+                            <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                                <a href="#" (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
+                                    Learn More
+                                </a>
+                                <a href="#" (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
+                                    <i class="fas fa-long-arrow-alt-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template> 
+        </ng-container>       
+   
+
+ 
+    
+
+    </div>
+</div> -->
+
+
+<section class="services pt-3 pb-3 " id="service">
+    <h2 class="text-center m-0">
+        Our Services
+    </h2>
+    <p class="text-center ms-auto me-auto w-75 pt-2 pb-2 mb-0  ">
+        We offer complete healthcare to individuals with various health concerns.
+    </p>
+    <div class="container serv">
+    <owl-carousel-o [options]="customOptions"> 
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Cardiology and Chest
+                        </p>
+                    </div>
+
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a [routerLink]="['/specialty/Cardiology and Chest']">
+                            Learn More
+                        </a>
+                        <a [routerLink]="['/specialty/Cardiology and Chest']">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card ">
+            <div class="serviceCard">
+                <div class="cardIcon">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <div class="cardBody">
+                    <p>
+                        Dentistry
+                    </p>
+                </div>
+                <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                    <a [routerLink]="['/specialty/Dentistry']">
+                        Learn More
+                    </a>
+                    <a [routerLink]="['/specialty/Dentistry']">
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Neurological Treatment
+                        </p>
+                    </div>
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a [routerLink]="['/specialty/Neurological Treatment']">
+                            Learn More
+                        </a>
+                        <a [routerLink]="['/specialty/Neurological Treatment']">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-baby"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Pediatrics and New Born
+                        </p>
+                    </div>
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a [routerLink]="['/specialty/Pediatrics and New Born']">
+                            Learn More
+                        </a>
+                        <a [routerLink]="['/specialty/Pediatrics and New Born']">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card ">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-hand-dots"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Dermatology (skin)
+                        </p>
+                    </div>
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a [routerLink]="['/specialty/Dermatology (skin)']">
+                            Learn More
+                        </a>
+                        <a [routerLink]="['/specialty/Dermatology (skin)']">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Psychiatry
+                        </p>
+                    </div>
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a [routerLink]="['/specialty/Psychiatry']">
+                            Learn More
+                        </a>
+                        <a [routerLink]="['/specialty/Psychiatry']">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card ">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-bone"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Othopedics(Bones)
+                        </p>
+                    </div>
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a [routerLink]="['/specialty/Othopedics(Bones)']">
+                            Learn More
+                        </a>
+                        <a [routerLink]="['/specialty/Othopedics(Bones)']">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card ">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-ear-deaf"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Ear,Nose and Throat
+                        </p>
+                    </div>
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a [routerLink]="['/specialty/Ear,Nose and Throat']">
+                            Learn More
+                        </a>
+                        <a [routerLink]="['/specialty/Ear,Nose and Throat']">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </ng-template>
+        <ng-template carouselSlide class="item-con">
+            <div class="item-card ">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-venus"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Gynaecology and Infertility
+                        </p>
+                    </div>
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a [routerLink]="['/specialty/Gynaecology and Infertility']">
+                            Learn More
+                        </a>
+                        <a [routerLink]="['/specialty/Gynaecology and Infertility']">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </ng-template>
+    </owl-carousel-o>
+</div>
+</section>

@@ -1,0 +1,145 @@
+<!-- <div class="MeetDoctors">
+  <div class="mainContainer py-5">
+    <div class="container">
+      <div class="content text-center">
+        <h2>Meet Medicus Physicians</h2>
+        <p class="meetdoc-pra">
+          L75orem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+          consectetur veritatis voluptatem odio libero, laudantium doloremque
+          assumenda labore officiis nemo?
+        </p>
+      </div>
+      <div class="row g-5 m-0">
+
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let doctor of doctors">
+            <div class="item-card">
+              <div class="card doctor">
+                <div class="pt-2 d-flex justify-content-center">
+                  <img
+                    class="docImg"
+                    [src]="doctor.img_name"
+                    class="card-img-top"
+                    [alt]="doctor.fname"
+                  />
+                </div>
+                <div class="card-body docinfo text-center">
+                  <p class="card-text fw-bold">Dr.
+                    <span>{{doctor.fname}}</span> 
+                    {{doctor.lname}}</p>
+                  <p class="card-text">{{doctor.specialization}}</p>
+                  <div
+                    class="cardFooter d-flex pt-3 justify-content-between align-items-center flex-nowrap"
+                  >
+                    <a [routerLink]="['/booking',doctor.id]"> Learn More </a>
+                    <a [routerLink]="['/booking',doctor.id]">
+                      <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+
+        </owl-carousel-o>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+<section class="MeetDoctors">
+  <div class="mainContainer py-5">
+      <div class="container ">
+          <div class="content text-center ">
+              <h2>Meet Medicus Physicians</h2>
+              <p class="meetdoc-pra">L75orem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur veritatis voluptatem odio libero, laudantium doloremque assumenda labore officiis nemo?</p>
+          </div>
+          <div class="row g-5 m-0">
+            <owl-carousel-o [options]="customOptions">
+              <ng-template carouselSlide>
+                  <div class="item-card">
+                  <div class="card doctor ">
+                      <div class="pt-2 d-flex justify-content-center">
+                      <img class="docImg"src="../../../../../assets/landing_page/images/kisspng-health-professional-medicine-physician-nurse-5affc387458874.0429913015267111752848.png" class="card-img-top" alt="...">
+                      </div>
+                      <div class="card-body docinfo text-center" >
+                        <p class="card-text fw-bold">
+                            Dr. Mohamed Said
+                        </p>
+                        <p class="card-text">Cardiology and Chest</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              <ng-template carouselSlide>
+                  <div class="item-card">
+                  <div class="card doctor" >
+                      <div class="pt-2 d-flex justify-content-center">
+                      <img class="docImg" src="../../../../../assets/landing_page/images/pngegg.png" class="card-img-top" alt="...">
+                  </div>
+                      <div class="card-body text-center">
+                        <p class="card-text fw-bold">
+                            Dr. Amr samy
+                        </p>
+                        <p class="card-text">Dentistry</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              <ng-template carouselSlide>
+                  <div class="item-card">
+                  <div class="card doctor" >
+                      <div class="pt-2 d-flex justify-content-center">
+                      <img class="docImg" src="../../../../../assets/landing_page/images/doctor-png-11553965920coieh57tza-removebg-preview.png" class="card-img-top" alt="...">
+                      </div>
+                      <div class="card-body text-center">
+                        <p class="card-text fw-bold">
+                            Dr.Ahmed Mohamed
+                        </p>
+                        <p class="card-text">  Neurological Treatment</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              <ng-template carouselSlide>
+                  <div class="item-card">
+                  <div class="card doctor" >
+                      <div class="pt-2  d-flex justify-content-center">
+                      <img class="docImg" src="../../../../../assets/landing_page/images/kisspng-health-professional-medicine-physician-nurse-5affc387458874.0429913015267111752848.png" class="card-img-top" alt="...">
+                      </div>
+                      <div class="card-body text-center">
+                        <p class="card-text fw-bold">
+                            Dr. Ali Mostafa
+                        </p>
+                        <p class="card-text">Pediatrics and New Born</p>
+                       
+                      </div>
+                  </div>
+              </div>
+            </ng-template>
+              <ng-template carouselSlide>
+                  <div class="item-card">
+                  <div class="card doctor" >
+                      <div class="pt-2  d-flex justify-content-center">
+                      <img class="docImg" src=" ../../../../../assets/landing_page/images/main-qimg-4e6e97f3798814cd6fa1cc62a6a1fc7c-lq-removebg-preview.png" class="card-img-top" alt="...">
+                      </div>
+                     
+                      <div class="card-body text-center">
+                        <p class="card-text fw-bold">
+                            Dr. Amira Mosaab
+                        </p>
+                        <p class="card-text"> Dermatology (skin)</p>
+                       
+                      </div>
+                  </div>
+              </div>
+            </ng-template>
+            
+            </owl-carousel-o>
+          </div>
+      </div>
+  </div>
+</section>

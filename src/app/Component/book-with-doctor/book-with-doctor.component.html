@@ -1,0 +1,307 @@
+<section>
+  <div class="main" style="min-height:80vh;">
+    <div class="container pt-2">
+      <span class="pt-2"
+        ><a routerLink="/Home" style="text-decoration: none;">A4Health</a> / Doctor
+        {{fname + " " +lname }}
+      </span>
+
+      <div class="row">
+        <div class="col-lg-8 gy-3 mt-0">
+          <div class="doctor-card card row m-0 mt-3 mb-3 p-3">
+            <div class="doctor-info col-lg-12 p-0 pe-sm-2 row m-0">
+              <div
+                class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center"
+              >
+                <img
+                  src="{{image_url}}"
+                  class="img-fluid rounded-circle"
+                  style="width:150px;"
+                />
+              </div>
+              <div
+                class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center"
+              >
+                <h4 class="doctor-name pt-2 pb-2 m-0">
+                  <span>Doctor : </span>
+                  <span>{{fname + " " + lname }}</span>
+                </h4>
+                <p class="text-secondary doctor-info">
+                  Title: {{ title }} 
+                </p>
+                <p class="text-secondary doctor-info">
+                  Specilaization: {{ specilaization }}
+                </p>
+              
+                <p class="card-text text-secondary ">
+                  Description: {{description }}
+                </p>
+                <!-- <p>
+                  <a href="#">General Surgeon Specialized in</a>
+                  <a href="#">Liver Tumor</a>,
+                  <a href="#">Obesity Surgery</a> ,<a href="#"
+                    >Adult General Surgery</a
+                  >,<a href="#"> Colon Tumor</a>,
+                  <a href="#">Breast Tumor</a>,<a href="#">
+                    Adult Oncology Surgery</a
+                  >,<span id="dots">....</span>
+                  <span *ngIf="show" id="more">
+                    <a href="#"> Gynaecologic Oncological Surgery</a>,<a
+                      href="#"
+                    >
+                      Trauma and Accident Surgery</a
+                    >
+                    <a href="#">Adult Gastroenterological Surgery</a> ,
+                    <a href="#">Endocrinal Surgery</a> ,
+                    <a href="#">Abdominal Surgery and Stomach Tumor</a></span
+                  >
+                </p> -->
+                <!-- <span (click)="showMore()" id="less" type="button">
+                  <a> {{ show ? "Show Less" : "Show More" }}</a></span
+                > -->
+
+                <!-- <div class="top-rated-review p-2">
+                  <i class="fa-solid fa-quote-left quote"></i>
+                  <p class="message text-center">
+                    {{reviewwithRateNumber.message}}
+                  </p>
+                  <div class="full-rate">
+                    <div class="rating d-flex gap-3 pb-2">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half"></i>
+                      <span class="text-muted"
+                        >Ahmed S.Tuesday, 28 August 2018</span
+                      >
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <!--   modal    -->
+          <div class="card mb-3 d-lg-none d-md-block" style="border-radius:10px 10px 0px 0px !important;">
+            <div class="card-header text-center bg-primary text-light">
+              Booking Information
+            </div>
+            <div class="card-body border-bottom">
+              <div class="text-center">
+                <!-- <p class="text-secondary">Book</p> -->
+                <div class="location">
+                  <i class="fa-solid fa-location-dot text-primary"></i>
+                  <span class="px15 text-secondary fs-5">
+                   {{city +":" +street}}
+                  </span>
+                  <p class="fw-bold text-secondary fs-6">
+                    Book now to receive the clinic’s address details and phone
+                    number
+                  </p>
+                </div>
+                <div class="text-center">
+                  <i
+                    class="fa-solid fa-money-bill-1-wave text-primary fs-4"
+                  ></i>
+                  <p class="text-secondary px15">
+                    Fees :<span class="fw-bold px15">{{fees}} EGP</span>
+                  </p>
+                </div>
+                <div class="my-2">
+                  <!-- <button (click)=" navigateTosearchPage()" class="btn btn-danger">
+                    <a >Make An Appointment </a>
+                  </button>               -->
+                  <button *ngIf="appointment_length" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
+                    <a >Make An Appointment </a>
+                  </button>
+                  <div *ngIf="!appointment_length" class="text-center bg-danger text-white notAvaliable d-block d-lg-none">
+                    Not Avaliable
+                  </div>  
+                  
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="insurance card py-3 mb-3">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">
+                <i class="fa-solid fa-umbrella umbrella px-3"></i>Offers
+              </h5>
+              <div *ngFor="let item of offers ">
+                      <p class="ms-2 mb-1">
+                       Offer: {{item.name}} <span> , Discount: {{item.discount}}</span>
+                      </p>
+              </div>
+  
+            </div>
+          </div>
+
+
+
+          <div class="review card py-3 mb-3" >
+            <h4 class="card-title text-secondary" style="border-bottom:1px solid #ddd; padding-bottom:10px">
+              <i class="fa-solid fa-star-half-stroke px-3 star"></i>
+              Patients’
+              Reviews :
+            </h4>
+            <div class="review-body py-2 mb-3 border-bottom" *ngFor="let review of doctor_reviews">
+        
+                <div class="container" >
+                <div class="row">
+                    <div class="col-lg-8">
+ 
+                  <div class="text-secondary">
+                    <p>Rating</p>
+                  </div>
+                  <div class="rating d-flex gap-3 pb-2 justify-content-start" >
+                    <i class={{item2}} *ngFor=" let item2 of +review.rate |ratingStars"></i>
+                  </div>
+  
+                  <div class="text-secondary">
+                    <p>
+                    patientName: {{review.patientName}}
+                    </p>
+                  </div>
+                  <div class="message">
+                      <p class="text-secondary">{{review.message}}</p>
+                      <!-- <span class="timing text-secondary">Sunday, 20 February 2022 08:26 PM</span> -->
+                  </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center justify-content-center">
+                    <div class="rate-number py-3 text-center justify-content-center">
+                        <span class="tota-rate fs-4 text p-2 ">{{review.rate}}</span>
+                        <p class="px15 text-secondary py-2">Doctor Rating </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+           
+        </div>
+
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <aside class="py-3">
+            <div class="card" style="border-radius:10px 10px 0px 0px !important;">
+              <div class="card-header text-center bg-primary text-light">
+                Booking Information
+              </div>
+              <div class="card-body border-bottom">
+                <div class="text-center">
+        
+                  <div class="location">
+                    <i class="fa-solid fa-location-dot text-primary"></i>
+                    <span class="px15 text-secondary fs-5">
+                     {{city +":" +street}}
+                    </span>
+                    <p class="fw-bold text-secondary fs-6">
+                      Book now to receive the clinic’s address details and phone
+                      number
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <i
+                      class="fa-solid fa-money-bill-1-wave text-primary fs-4"
+                    ></i>
+                    <p class="text-secondary px15">
+                      Fees :<span class="fw-bold px15">{{fees}} EGP</span>
+                    </p>
+                  </div>
+                  <div class="my-2">
+                  <!-- <button (click)=" navigateTosearchPage()" class="btn btn-danger">
+                    <a >Make An Appointment </a>
+                  </button>               -->
+                    <button *ngIf="appointment_length" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
+                      <a >Make An Appointment </a>
+                    </button> 
+                    <div *ngIf="!appointment_length" class="text-center bg-danger text-white notAvaliable d-block ">
+                      Not Avaliable
+                    </div>  
+                    
+                  </div>
+            
+                </div>
+              </div>
+    
+
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <div #myModal2 id="confirm_appointment2" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
+	<div  class="modal-dialog modal-dialog-centered modal-confirm ">
+		<div class="modal-content ">
+			<div class="modal-header d-flex flex-column">
+				<div class="icon-box">
+                    <i class="fa-solid fa-calendar-check material-icon text-primary"></i>
+				</div>				
+				<h4 class="modal-title text-primary w-100">Awesome!</h4>
+			</div>
+			<div class="modal-body">
+      
+				<p class="text-center">Your booking has been confirmed. Check your profile for detials.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn w-100" data-bs-dismiss="modal" (click)="naivgateToReservation(submmitedForm)">OK</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal  fade" id="Appointment_booking" tabindex="-1" aria-labelledby="AppointmentsLabel33" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5 class="modal-title text-primary" id="AppointmentsLabel33">Make An Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" >
+                <div class="carousel-item"  *ngFor="let appointment_item of appointment ;let i=index" [ngClass]="i==0?'active':''" >
+                  <form #AppointmentFormModal="ngForm"   class="card text-center slide">
+                      <div class=" card-header bg-primary text-white">
+                       {{appointment_item.Date | appointmentPipe}}
+                      </div>
+                      <div class="card-body position-relative" >
+                          <input #dateModal type="hidden" name="date" value={{appointment_item.Date}}>
+                          <ul  #selectListModal class="form-select  ul_booking  timing lh-lg w-100 " name="appointment"    (click)="disableAllbuttons(bookingButton)">
+                            <li style="font-size: 14px;"  (click)="disableAllOptions(option,item)"  [ngClass]="confirmOption==item && confirmDate==appointment_item.Date ?'d-none':''"  #option *ngFor="let item of  appointment_item.Time"  class="mt-1 mb-1 booking_li">
+                                {{item}}
+                            </li>
+                        </ul>
+                      </div>
+                       <button #bookingButton disabled class=" btn btn-danger position-relative" type="submit"  (click)="submitAppointmentModal(AppointmentFormModal,dateModal,myModal2,appointment_item.id)"  [routerLink]="!confirm_condition?['/signin']:[]">
+                          <!-- <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
+                              <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
+                          </div> -->
+                           Book
+                       </button>
+
+                  </form>
+                </div>
+                
+              </div>
+              <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <i class="fa-solid fa-angle-left carousel-control-prev-icon text-primary fs-2"></i>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <i class="fa-solid fa-angle-right carousel-control-next-icon text-primary fs-2"></i>
+                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+
+      </div>
+      </div>
+    </div>
+</div> 
